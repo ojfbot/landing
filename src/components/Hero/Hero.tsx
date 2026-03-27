@@ -24,14 +24,15 @@ export function Hero() {
             rel="noopener noreferrer"
           >
             Explore Frame OS
+            <span className={styles.ctaHint}>(for now — best in fullscreen)</span>
           </a>
           <a
-            href="https://cv.jim.software"
+            href="/JFO-Resume.pdf"
             className={styles.ctaSecondary}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read the Résumé
+            View Resumé
           </a>
         </div>
       </div>
