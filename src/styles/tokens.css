@@ -1,0 +1,35 @@
+/* Frame OS design tokens — dark mode subset for landing page */
+:root {
+  --ojf-accent:        #7c6af7;
+  --ojf-accent-hover:  #6b59e8;
+  --ojf-accent-active: #5848d9;
+  --ojf-accent-subtle: rgba(124, 106, 247, 0.12);
+
+  --ojf-font-sans:     'IBM Plex Sans', sans-serif;
+  --ojf-font-mono:     'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
+
+  --ojf-ease:          cubic-bezier(0.16, 1, 0.3, 1);
+  --ojf-duration-fast: 120ms;
+  --ojf-duration-base: 200ms;
+
+  --ojf-spacing-xs:  0.25rem;
+  --ojf-spacing-sm:  0.5rem;
+  --ojf-spacing-md:  1rem;
+  --ojf-spacing-lg:  1.5rem;
+  --ojf-spacing-xl:  2rem;
+  --ojf-spacing-2xl: 3rem;
+
+  --ojf-radius-card:   12px;
+  --ojf-duration-layout: 400ms;
+
+  --ojf-bg:            #0a0a0a;
+  --ojf-surface-1:     #111111;
+  --ojf-surface-2:     #181818;
+
+  --ojf-border:        #2a2a2a;
+  --ojf-border-subtle: #1e1e1e;
+
+  --ojf-text-primary:  #e8e8e8;
+  --ojf-text-secondary:#a0a0a0;
+  --ojf-text-muted:    #6f6f6f;
+}

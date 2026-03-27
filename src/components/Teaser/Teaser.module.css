@@ -1,0 +1,35 @@
+.section {
+  padding: var(--ojf-spacing-2xl) var(--ojf-spacing-xl);
+  max-width: 52rem;
+  margin: 0 auto;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.text {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.9375rem;
+  color: var(--ojf-text-muted);
+  line-height: 1.6;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ojf-accent);
+  margin-right: var(--ojf-spacing-sm);
+  border: 1px solid var(--ojf-accent);
+  border-radius: 3px;
+  padding: 0.0625rem 0.375rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: var(--ojf-spacing-xl) var(--ojf-spacing-md);
+  }
+}

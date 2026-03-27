@@ -1,0 +1,58 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--ojf-font-sans);
+  background: var(--ojf-bg);
+  color: var(--ojf-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--ojf-accent);
+  text-decoration: none;
+  transition: color var(--ojf-duration-fast) var(--ojf-ease);
+}
+
+a:hover {
+  color: var(--ojf-accent-hover);
+}
+
+::selection {
+  background: var(--ojf-accent);
+  color: var(--ojf-bg);
+}
+
+/* Layer page content above the fixed 3D canvas */
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

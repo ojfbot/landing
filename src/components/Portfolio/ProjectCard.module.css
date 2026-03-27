@@ -1,0 +1,115 @@
+.wrapper {
+  padding-bottom: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.card {
+  background: var(--ojf-surface-1);
+  border: 1px solid var(--ojf-border-subtle);
+  border-left: 4px solid var(--ojf-accent);
+  border-radius: var(--ojf-radius-card);
+  padding: var(--ojf-spacing-lg);
+  transition:
+    transform var(--ojf-duration-fast) var(--ojf-ease),
+    box-shadow var(--ojf-duration-base) var(--ojf-ease),
+    border-color var(--ojf-duration-base) var(--ojf-ease);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.link:hover .card,
+.card:hover {
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-color: var(--ojf-border);
+}
+
+.comingSoon {
+  opacity: 0.5;
+  border-left-color: color-mix(in srgb, var(--ojf-accent) 30%, transparent);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ojf-spacing-sm);
+}
+
+.name {
+  font-family: var(--ojf-font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ojf-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ojf-text-muted);
+  background: color-mix(in srgb, var(--ojf-accent) 12%, transparent);
+  border-radius: 3px;
+  padding: 0.125rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: var(--ojf-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--ojf-spacing-md);
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ojf-spacing-xs);
+}
+
+.tag {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ojf-text-muted);
+  background: color-mix(in srgb, var(--ojf-accent) 12%, transparent);
+  padding: 0.125rem 0.5rem;
+  border-radius: 3px;
+}
+
+/* Scroll animation — entry from depth */
+.cardAnimated {
+  opacity: 0;
+  transform: perspective(1000px) translateZ(-400px);
+  transition:
+    opacity 700ms var(--ojf-ease),
+    transform 700ms var(--ojf-ease);
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: perspective(1000px) translateZ(0);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding-bottom: 0;
+  }
+
+  .cardAnimated {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

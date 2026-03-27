@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ojf-spacing-xl);
+  border-top: 1px solid var(--ojf-border-subtle);
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+}
+
+.copy {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.75rem;
+  color: var(--ojf-text-muted);
+}
+
+.link {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.75rem;
+  color: var(--ojf-text-muted);
+}
+
+.link:hover {
+  color: var(--ojf-text-primary);
+}

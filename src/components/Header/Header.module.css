@@ -1,0 +1,56 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ojf-spacing-md) var(--ojf-spacing-xl);
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9) 0%, transparent 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.wordmark {
+  font-family: var(--ojf-font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ojf-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.wordmark:hover {
+  color: var(--ojf-accent);
+}
+
+.nav {
+  display: flex;
+  gap: var(--ojf-spacing-lg);
+}
+
+.navLink {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.8125rem;
+  color: var(--ojf-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.navLink:hover {
+  color: var(--ojf-text-primary);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: var(--ojf-spacing-sm) var(--ojf-spacing-md);
+  }
+
+  .nav {
+    gap: var(--ojf-spacing-md);
+  }
+
+  .navLink {
+    font-size: 0.75rem;
+  }
+}

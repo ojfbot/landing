@@ -1,0 +1,77 @@
+.section {
+  padding: var(--ojf-spacing-2xl) var(--ojf-spacing-xl);
+  max-width: 72rem;
+  margin: 0 auto;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: relative;
+  overflow: hidden;
+}
+
+.heading {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ojf-text-secondary);
+  margin-bottom: var(--ojf-spacing-xs);
+}
+
+.subheading {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.8125rem;
+  color: var(--ojf-text-muted);
+  margin-bottom: var(--ojf-spacing-2xl);
+  line-height: 1.5;
+}
+
+/* Three.js canvas sits behind cards */
+.sceneCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* CSS Grid masonry — 4px row unit, dense packing */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 4px);
+  grid-auto-flow: dense;
+  column-gap: 24px;
+  row-gap: 0;
+}
+
+@media (min-width: 1600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: var(--ojf-spacing-xl) var(--ojf-spacing-md);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: var(--ojf-spacing-md);
+  }
+}

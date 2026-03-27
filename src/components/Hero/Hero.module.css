@@ -1,0 +1,77 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--ojf-spacing-xl);
+  max-width: 52rem;
+}
+
+.headline {
+  font-family: var(--ojf-font-sans);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ojf-text-primary);
+  margin-bottom: var(--ojf-spacing-lg);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.subline {
+  font-family: var(--ojf-font-mono);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  color: var(--ojf-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--ojf-spacing-2xl);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+.ctas {
+  display: flex;
+  gap: var(--ojf-spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  transition: all var(--ojf-duration-base) var(--ojf-ease);
+  letter-spacing: 0.02em;
+}
+
+.ctaPrimary {
+  background: var(--ojf-accent);
+  color: #fff;
+}
+
+.ctaPrimary:hover {
+  background: var(--ojf-accent-hover);
+  color: #fff;
+}
+
+.ctaSecondary {
+  border: 1px solid var(--ojf-border);
+  color: var(--ojf-text-primary);
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.ctaSecondary:hover {
+  border-color: var(--ojf-accent);
+  color: var(--ojf-accent);
+}
