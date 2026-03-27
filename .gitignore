@@ -5,3 +5,10 @@ dist
 .vercel
 *.tsbuildinfo
 .DS_Store
+
+# Frame OS symlinks (managed by install-agents.sh)
+.claude/skills/
+.claude/commands
+domain-knowledge/
+personal-knowledge/
+decisions/core
