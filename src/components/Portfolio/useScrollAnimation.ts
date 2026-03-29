@@ -21,19 +21,24 @@ export function useScrollAnimation(
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-    // If reduced motion, just make all cards visible immediately
-    if (prefersReduced) {
+    // Skip animations on reduced motion or mobile
+    if (prefersReduced || isMobile) {
       for (const card of cardRefs.current) {
         if (card) {
           card.style.opacity = "1";
           card.style.transform = "none";
         }
       }
+      // Hide canvas on mobile to save battery
+      if (isMobile) {
+        canvas.style.display = "none";
+      }
       return;
     }
 
-    // Lazy-load Three.js scene
+    // Lazy-load Three.js scene (desktop only)
     let scene: ScrollScene | null = null;
     import("./ScrollScene").then(({ ScrollScene: SC }) => {
       if (!canvas.isConnected) return; // unmounted

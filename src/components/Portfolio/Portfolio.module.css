@@ -74,4 +74,14 @@
     grid-template-rows: auto;
     gap: var(--ojf-spacing-md);
   }
+
+  .sceneCanvas {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .section {
+    padding: var(--ojf-spacing-lg) var(--ojf-spacing-sm);
+  }
 }

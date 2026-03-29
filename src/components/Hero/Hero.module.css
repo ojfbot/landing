@@ -84,3 +84,19 @@
   margin-top: 2px;
   letter-spacing: 0.01em;
 }
+
+@media (max-width: 480px) {
+  .content {
+    padding: var(--ojf-spacing-lg);
+  }
+
+  .ctas {
+    flex-direction: column;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    text-align: center;
+  }
+}
