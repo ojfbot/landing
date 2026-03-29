@@ -6,4 +6,6 @@ export interface Project {
   tags: string[];
   status: "live" | "coming-soon";
   size?: "sm" | "md" | "lg";
+  preview?: string;
+  previewAlt?: string;
 }
