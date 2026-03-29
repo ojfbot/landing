@@ -64,6 +64,26 @@
   letter-spacing: 0.05em;
 }
 
+.previewBtn {
+  background: none;
+  border: 1px solid var(--ojf-border-subtle);
+  border-radius: 4px;
+  color: var(--ojf-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--ojf-duration-fast) var(--ojf-ease),
+              border-color var(--ojf-duration-fast) var(--ojf-ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.previewBtn:hover {
+  color: var(--ojf-accent);
+  border-color: var(--ojf-accent);
+}
+
 .tagline {
   font-size: 0.875rem;
   color: var(--ojf-text-secondary);
@@ -107,9 +127,21 @@
     padding-bottom: 0;
   }
 
+  .card {
+    padding: var(--ojf-spacing-md);
+  }
+
   .cardAnimated {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .tags {
+    gap: var(--ojf-spacing-xs);
+  }
+
+  .tag {
+    font-size: 0.625rem;
   }
 }
