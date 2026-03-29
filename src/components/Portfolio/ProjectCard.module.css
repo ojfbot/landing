@@ -107,9 +107,21 @@
     padding-bottom: 0;
   }
 
+  .card {
+    padding: var(--ojf-spacing-md);
+  }
+
   .cardAnimated {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .tags {
+    gap: var(--ojf-spacing-xs);
+  }
+
+  .tag {
+    font-size: 0.625rem;
   }
 }
