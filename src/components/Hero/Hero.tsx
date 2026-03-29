@@ -5,15 +5,11 @@ export function Hero() {
     <section className={styles.hero} id="hero">
       <div className={styles.content}>
         <h1 className={styles.headline}>
-          What happens when an enterprise engineer
-          <br />
-          builds his own infrastructure?
+          What happens when an enterprise engineer builds his own infrastructure?
         </h1>
         <p className={styles.subline}>
           This is jim.software — a personal platform where I experiment with
-          <br />
           AI orchestration, module federation, and the CI/CD pipelines
-          <br />
           that make it all work. Same rigor. Team of one.
         </p>
         <div className={styles.ctas}>

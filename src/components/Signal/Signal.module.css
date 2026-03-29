@@ -34,4 +34,13 @@
   .section {
     padding: var(--ojf-spacing-xl) var(--ojf-spacing-md);
   }
+
+  .line {
+    word-break: break-word;
+  }
+
+  .muted,
+  .accent {
+    display: inline;
+  }
 }

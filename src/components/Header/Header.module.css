@@ -41,16 +41,101 @@
   color: var(--ojf-text-primary);
 }
 
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menuBar,
+.menuBar::before,
+.menuBar::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--ojf-text-primary);
+  border-radius: 1px;
+  transition: all var(--ojf-duration-base) var(--ojf-ease);
+}
+
+.menuBar {
+  position: relative;
+}
+
+.menuBar::before,
+.menuBar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menuBar::before {
+  top: -6px;
+}
+
+.menuBar::after {
+  top: 6px;
+}
+
+.menuBarOpen {
+  background: transparent;
+}
+
+.menuBarOpen::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menuBarOpen::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 @media (max-width: 600px) {
   .header {
     padding: var(--ojf-spacing-sm) var(--ojf-spacing-md);
   }
 
+  .menuToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .nav {
-    gap: var(--ojf-spacing-md);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ojf-border-subtle);
+    padding: var(--ojf-spacing-sm) 0;
+  }
+
+  .navOpen {
+    display: flex;
   }
 
   .navLink {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
+    padding: var(--ojf-spacing-md) var(--ojf-spacing-xl);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navLink:hover {
+    background: rgba(124, 106, 247, 0.08);
   }
 }

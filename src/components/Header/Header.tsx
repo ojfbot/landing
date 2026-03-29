@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Header.module.css";
 
 const NAV_LINKS = [
@@ -8,12 +9,22 @@ const NAV_LINKS = [
 ];
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <a href="#hero" className={styles.wordmark}>
         jim.software
       </a>
-      <nav className={styles.nav}>
+      <button
+        className={styles.menuToggle}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+      >
+        <span className={`${styles.menuBar} ${menuOpen ? styles.menuBarOpen : ""}`} />
+      </button>
+      <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
         {NAV_LINKS.map((link) => (
           <a
             key={link.label}
@@ -21,6 +32,7 @@ export function Header() {
             className={styles.navLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
           >
             {link.label}
           </a>

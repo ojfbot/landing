@@ -20,8 +20,20 @@
   font-family: var(--ojf-font-mono);
   font-size: 0.75rem;
   color: var(--ojf-text-muted);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .link:hover {
   color: var(--ojf-text-primary);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    gap: var(--ojf-spacing-sm);
+    padding: var(--ojf-spacing-lg) var(--ojf-spacing-md);
+    text-align: center;
+  }
 }
