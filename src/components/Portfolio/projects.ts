@@ -8,7 +8,7 @@ export const projects: Project[] = [
     url: "https://frame.jim.software",
     tags: ["module-federation", "react", "redux"],
     status: "live",
-    preview: "/previews/frame-os.webp",
+    preview: "/previews/frame-os.png",
     previewAlt: "Frame OS shell with module federation remotes",
   },
   {
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     url: "https://cv.jim.software",
     tags: ["langgraph", "ai-agents", "playwright"],
     status: "live",
-    preview: "/previews/cv-builder.webp",
+    preview: "/previews/cv-builder.png",
     previewAlt: "Resumé Builder with LangGraph agent graph",
   },
   {
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     url: "https://blog.jim.software",
     tags: ["notion-api", "langgraph", "sse"],
     status: "live",
-    preview: "/previews/blogengine.webp",
+    preview: "/previews/blogengine.png",
     previewAlt: "BlogEngine multi-tab content dashboard",
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     url: "https://trips.jim.software",
     tags: ["sse-pipeline", "langgraph", "sqlite"],
     status: "live",
-    preview: "/previews/tripplanner.webp",
+    preview: "/previews/tripplanner.png",
     previewAlt: "TripPlanner itinerary view with SSE pipeline",
   },
   {
@@ -48,8 +48,6 @@ export const projects: Project[] = [
     url: "https://core-reader.jim.software",
     tags: ["chokidar", "filesystem", "read-only"],
     status: "live",
-    preview: "/previews/core-reader.webp",
-    previewAlt: "Core Reader ADR and command dashboard",
   },
   {
     id: "daily-logger",
@@ -58,7 +56,7 @@ export const projects: Project[] = [
     url: "https://log.jim.software",
     tags: ["automation", "github-api", "react", "vercel"],
     status: "live",
-    preview: "/previews/daily-logger.webp",
+    preview: "/previews/daily-logger.png",
     previewAlt: "Daily Logger development journal",
   },
   {
@@ -68,8 +66,6 @@ export const projects: Project[] = [
     url: "https://seh-study.jim.software",
     tags: ["spaced-repetition", "carbon", "education"],
     status: "live",
-    preview: "/previews/seh-study.webp",
-    previewAlt: "SEH Study spaced repetition interface",
   },
   {
     id: "purefoy",
