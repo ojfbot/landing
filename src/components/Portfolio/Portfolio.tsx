@@ -26,7 +26,16 @@ export function Portfolio() {
       <h2 className={styles.heading}>What's running</h2>
       <p className={styles.subheading}>
         Each app is a Module Federation remote — independent deploy, shared
-        shell, one AI gateway. The kind of setup you'd staff a team for.
+        shell, one AI gateway. All traceable, all works in progress. That's
+        the fun part.{" "}
+        <a
+          href="https://log.jim.software"
+          className={styles.inlineLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See the daily dev log &rarr;
+        </a>
       </p>
 
       <canvas ref={canvasRef} className={styles.sceneCanvas} />
