@@ -27,6 +27,16 @@
   line-height: 1.5;
 }
 
+.inlineLink {
+  color: var(--ojf-accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.inlineLink:hover {
+  text-decoration: underline;
+}
+
 /* Three.js canvas sits behind cards */
 .sceneCanvas {
   position: absolute;
