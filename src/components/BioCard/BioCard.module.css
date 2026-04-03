@@ -1,0 +1,131 @@
+.wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 72rem;
+  margin: -4rem auto var(--ojf-spacing-2xl);
+  padding: 0 var(--ojf-spacing-xl);
+}
+
+.card {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: var(--ojf-spacing-xl) var(--ojf-spacing-xl);
+  border: 1px solid var(--ojf-border);
+  border-radius: var(--ojf-radius-card);
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: border-color var(--ojf-duration-base) var(--ojf-ease),
+              box-shadow var(--ojf-duration-base) var(--ojf-ease);
+}
+
+.card:hover {
+  border-color: var(--ojf-accent);
+  box-shadow: 0 0 20px rgba(124, 106, 247, 0.08);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--ojf-spacing-lg);
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ojf-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ojf-text-secondary);
+}
+
+.avatar svg {
+  width: 32px;
+  height: 32px;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--ojf-font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ojf-text-primary);
+  line-height: 1.3;
+}
+
+.title {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.8125rem;
+  color: var(--ojf-text-secondary);
+  line-height: 1.4;
+}
+
+.tagline {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.8125rem;
+  color: var(--ojf-text-muted);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--ojf-text-muted);
+  transition: transform var(--ojf-duration-layout) var(--ojf-ease);
+}
+
+.expanded .chevron {
+  transform: rotate(180deg);
+}
+
+.body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--ojf-duration-layout) var(--ojf-ease),
+              opacity var(--ojf-duration-layout) var(--ojf-ease);
+}
+
+.expanded .body {
+  max-height: 14rem;
+  opacity: 1;
+}
+
+.bio {
+  font-family: var(--ojf-font-mono);
+  font-size: 0.8125rem;
+  color: var(--ojf-text-secondary);
+  line-height: 1.65;
+  padding-top: var(--ojf-spacing-md);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 0 var(--ojf-spacing-md);
+    margin-top: -2rem;
+  }
+
+  .card {
+    padding: var(--ojf-spacing-lg) var(--ojf-spacing-md);
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 0 var(--ojf-spacing-sm);
+  }
+}
