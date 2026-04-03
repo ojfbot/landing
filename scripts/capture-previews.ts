@@ -17,7 +17,7 @@ if (targets.length === 0) {
 }
 
 const browser = await chromium.launch();
-const context = await browser.newContext({ viewport: VIEWPORT });
+const context = await browser.newContext({ viewport: VIEWPORT, colorScheme: "dark" });
 
 for (const project of targets) {
   const path = resolve(OUT_DIR, `${project.id}.png`);
