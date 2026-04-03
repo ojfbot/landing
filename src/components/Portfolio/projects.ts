@@ -111,4 +111,14 @@ export const projects: Project[] = [
     preview: "/previews/gastown-pilot.png",
     previewAlt: "Gastown Pilot governance dashboard",
   },
+  {
+    id: "hailstone",
+    name: "Hailstone",
+    tagline: "Chuuk Lagoon wreck diving map. 3D Mapbox terrain, Firebase photo sharing, GSAP animations.",
+    url: "https://hailstone.ocommaj.com",
+    tags: ["mapbox-gl", "firebase", "gsap"],
+    status: "live",
+    preview: "/previews/hailstone.png",
+    previewAlt: "Hailstone wreck diving map with 3D Mapbox terrain",
+  },
 ];
