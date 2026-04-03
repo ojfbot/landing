@@ -66,10 +66,10 @@ export function BioCard() {
         <div className={styles.body}>
           <p className={styles.bio}>
             Frame&nbsp;OS is my workshop&nbsp;— eleven apps, one platform, all
-            experiments. I come from design and cinema, which mostly means I'm
-            obsessed with why things feel right or wrong. Right now I'm exploring
-            how far one engineer and AI-native tooling can push that instinct.
-            Everything here is a work in progress. That's the point.
+            experiments. Art and architecture shape how I think about systems
+            and process, and that carries into everything I build. Right now
+            I'm exploring how far one engineer and AI-native tooling can take
+            that. Everything here is a work in progress. That's the point.
           </p>
         </div>
       </button>
