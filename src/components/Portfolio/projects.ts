@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     id: "core-reader",
     name: "Core Reader",
-    tagline: "Self-documenting dashboard. ADRs and commands rendered from the filesystem.",
+    tagline: "The control surface — ADRs, commands, and project state rendered live from the filesystem. How 11+ apps and plugins stay legible.",
     url: "https://frame.jim.software?app=core-reader",
     tags: ["chokidar", "filesystem", "read-only"],
     status: "live",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     id: "daily-logger",
     name: "Daily Logger",
-    tagline: "Claude sweeps 11 repos nightly and publishes a development journal.",
+    tagline: "The connective tissue — Claude sweeps 11+ repos and plugins nightly, tracks every roadmap, and publishes a development journal that keeps the whole fleet moving.",
     url: "https://log.jim.software",
     tags: ["automation", "github-api", "react", "vercel"],
     status: "live",
