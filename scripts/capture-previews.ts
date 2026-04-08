@@ -25,6 +25,11 @@ for (const project of targets) {
   console.log(`Capturing ${project.id} — ${project.url}`);
   try {
     await page.goto(project.url, { waitUntil: "networkidle", timeout: 30_000 });
+    // For shell-hosted apps (?app=), wait for MF remote to load
+    if (project.url.includes("?app=")) {
+      await page.waitForSelector(".frame-fade-in", { timeout: 15_000 });
+      await page.waitForTimeout(500); // let fade-in animation settle
+    }
     await page.screenshot({ path, type: "png" });
     console.log(`  -> ${path}`);
   } catch (err) {
