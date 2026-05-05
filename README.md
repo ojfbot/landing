@@ -16,6 +16,6 @@ Personal landing page and portfolio.
 
 ## Tech
 
-Vite + React + TypeScript + Three.js. Deployed on Vercel.
+Vite + React + TypeScript + Three.js + Babylon.js. Deployed on Vercel.
 
 Part of the [ojfbot](https://github.com/ojfbot) org.
