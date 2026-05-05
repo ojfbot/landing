@@ -121,4 +121,14 @@ export const projects: Project[] = [
     preview: "/previews/hailstone.png",
     previewAlt: "Hailstone wreck diving map with 3D Mapbox terrain",
   },
+  {
+    id: "groupthink",
+    name: "GroupThink",
+    tagline: "LLM-powered tab grouping. Semantic clusters, not domain piles. 64 tabs become 6 meaningful workspaces, rendered as a zoomable d3 treemap.",
+    url: "https://github.com/ojfbot/GroupThink",
+    tags: ["chrome-mv3", "d3-treemap", "anthropic"],
+    status: "live",
+    preview: "/previews/groupthink.png",
+    previewAlt: "GroupThink treemap of 64 tabs organized into semantic groups",
+  },
 ];
