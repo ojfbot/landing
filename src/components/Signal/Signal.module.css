@@ -1,6 +1,11 @@
+/* Signal — GroupThink transfer
+ * Editorial manifesto lines: bolder leading clause, accent as
+ * "highlighted by hand" red underline, muted asides quieter.
+ */
+
 .section {
   padding: var(--ojf-spacing-2xl) var(--ojf-spacing-xl);
-  max-width: 52rem;
+  max-width: 56rem;
   margin: 0 auto;
   border-top: 1px solid var(--ojf-border-subtle);
   background: rgba(10, 10, 10, 0.85);
@@ -11,23 +16,33 @@
 .lines {
   display: flex;
   flex-direction: column;
-  gap: var(--ojf-spacing-md);
+  gap: var(--ojf-spacing-lg);
 }
 
+/* Each line is a manifesto bullet — bigger, tighter, more weight on the claim */
 .line {
   font-family: var(--ojf-font-sans);
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: clamp(1.25rem, 2.4vw, 1.625rem);
+  font-weight: var(--ojf-font-weight-bold);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
   color: var(--ojf-text-primary);
 }
 
+/* Accent — red + hand-drawn underline (the "red thread" as highlighter) */
 .accent {
   color: var(--ojf-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--ojf-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-weight: var(--ojf-font-weight-black);
 }
 
+/* Muted — quieter, lighter, the parenthetical aside */
 .muted {
   color: var(--ojf-text-muted);
+  font-weight: var(--ojf-font-weight-normal);
 }
 
 @media (max-width: 600px) {

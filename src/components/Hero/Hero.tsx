@@ -5,7 +5,7 @@ export function Hero() {
     <section className={styles.hero} id="hero">
       <div className={styles.content}>
         <h1 className={styles.headline}>
-          One engineer. An AI-native dev stack. Eleven apps and counting.
+          One engineer. <em>An AI-native dev stack.</em> Eleven apps and counting.
         </h1>
         <p className={styles.subline}>
           This is jim.software — where I build the tools, the platform, and the
