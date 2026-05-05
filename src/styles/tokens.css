@@ -1,35 +1,61 @@
-/* Frame OS design tokens — dark mode subset for landing page */
+/* Landing design tokens — GroupThink transfer (Rams + Lois)
+ * Source: /Users/yuri/ojfbot/GroupThink/src/styles/tokens.css
+ * Brief: ~/.claude/projects/-Users-yuri-ojfbot-core/memory/project_landing_groupthink_brief.md
+ *
+ * Rams: simplicity, rigor, purposefulness — every token earns its place
+ * Lois: wit, delight, purpose — type is the hero, ONE bold accent
+ */
 :root {
-  --ojf-accent:        #7c6af7;
-  --ojf-accent-hover:  #6b59e8;
-  --ojf-accent-active: #5848d9;
-  --ojf-accent-subtle: rgba(124, 106, 247, 0.12);
+  /* Accent — Lois-bold red (single thread of color across the page) */
+  --ojf-accent:        #ff4d5a;
+  --ojf-accent-hover:  #ff6b75;
+  --ojf-accent-active: #e63946;
+  --ojf-accent-subtle: rgba(255, 77, 90, 0.12);
 
-  --ojf-font-sans:     'IBM Plex Sans', sans-serif;
-  --ojf-font-mono:     'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
+  /* Typography — Inter as display (weight 900) + JetBrains Mono for code/labels */
+  --ojf-font-sans:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ojf-font-mono:     'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --ojf-font-weight-normal: 400;
+  --ojf-font-weight-medium: 500;
+  --ojf-font-weight-bold:   700;
+  --ojf-font-weight-black:  900;
 
+  /* Motion — expo-out, the GroupThink curve (already aligned with previous tokens) */
   --ojf-ease:          cubic-bezier(0.16, 1, 0.3, 1);
   --ojf-duration-fast: 120ms;
   --ojf-duration-base: 200ms;
-
-  --ojf-spacing-xs:  0.25rem;
-  --ojf-spacing-sm:  0.5rem;
-  --ojf-spacing-md:  1rem;
-  --ojf-spacing-lg:  1.5rem;
-  --ojf-spacing-xl:  2rem;
-  --ojf-spacing-2xl: 3rem;
-
-  --ojf-radius-card:   12px;
   --ojf-duration-layout: 400ms;
 
+  /* Spacing — 8px grid */
+  --ojf-spacing-xs:  0.25rem;  /*  4px */
+  --ojf-spacing-sm:  0.5rem;   /*  8px */
+  --ojf-spacing-md:  1rem;     /* 16px */
+  --ojf-spacing-lg:  1.5rem;   /* 24px */
+  --ojf-spacing-xl:  2rem;     /* 32px */
+  --ojf-spacing-2xl: 3rem;     /* 48px */
+
+  /* Radii — small, never pill-shape */
+  --ojf-radius-sm:    4px;
+  --ojf-radius-card:  8px;
+  --ojf-radius-lg:    12px;
+
+  /* Surfaces — warm-leaning dark, slight gray ladder */
   --ojf-bg:            #0a0a0a;
-  --ojf-surface-1:     #111111;
-  --ojf-surface-2:     #181818;
+  --ojf-surface-1:     #141414;
+  --ojf-surface-2:     #1e1e1e;
+  --ojf-surface-hover: rgba(255, 255, 255, 0.04);
 
-  --ojf-border:        #2a2a2a;
-  --ojf-border-subtle: #1e1e1e;
+  /* Borders */
+  --ojf-border:        rgba(255, 255, 255, 0.08);
+  --ojf-border-subtle: rgba(255, 255, 255, 0.04);
 
-  --ojf-text-primary:  #e8e8e8;
-  --ojf-text-secondary:#a0a0a0;
-  --ojf-text-muted:    #6f6f6f;
+  /* Text */
+  --ojf-text-primary:  #f0f0f0;
+  --ojf-text-secondary:#999999;
+  --ojf-text-muted:    #555555;
+
+  /* Shadows — subtle in dark mode */
+  --ojf-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --ojf-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ojf-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
 }

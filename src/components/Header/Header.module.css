@@ -1,3 +1,7 @@
+/* Header — GroupThink transfer
+ * Wordmark in sans-black, nav as uppercase mono labels.
+ */
+
 .header {
   position: fixed;
   top: 0;
@@ -13,12 +17,15 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
+/* Wordmark — sans-black, the page's smallest "Lois moment" */
 .wordmark {
-  font-family: var(--ojf-font-mono);
+  font-family: var(--ojf-font-sans);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--ojf-font-weight-black);
   color: var(--ojf-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  transition: color var(--ojf-duration-fast) var(--ojf-ease);
 }
 
 .wordmark:hover {
@@ -30,15 +37,19 @@
   gap: var(--ojf-spacing-lg);
 }
 
+/* Uppercase mono nav — the editorial section labels */
 .navLink {
   font-family: var(--ojf-font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
+  font-weight: var(--ojf-font-weight-bold);
   color: var(--ojf-text-secondary);
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color var(--ojf-duration-fast) var(--ojf-ease);
 }
 
 .navLink:hover {
-  color: var(--ojf-text-primary);
+  color: var(--ojf-accent);
 }
 
 .menuToggle {
@@ -136,6 +147,6 @@
   }
 
   .navLink:hover {
-    background: rgba(124, 106, 247, 0.08);
+    background: var(--ojf-accent-subtle);
   }
 }

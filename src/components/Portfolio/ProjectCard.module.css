@@ -1,5 +1,11 @@
+/* ProjectCard — GroupThink transfer
+ * Magazine-index numbering, sans-black project names,
+ * red-thread rank borders that fade with index.
+ */
+
 .wrapper {
   padding-bottom: 12px;
+  counter-increment: portfolio-item;
 }
 
 .link {
@@ -10,11 +16,12 @@
 }
 
 .card {
+  position: relative;
   background: var(--ojf-surface-1);
   border: 1px solid var(--ojf-border-subtle);
   border-left: 4px solid var(--ojf-accent);
   border-radius: var(--ojf-radius-card);
-  padding: var(--ojf-spacing-lg);
+  padding: var(--ojf-spacing-lg) var(--ojf-spacing-lg) var(--ojf-spacing-lg) var(--ojf-spacing-xl);
   transition:
     transform var(--ojf-duration-fast) var(--ojf-ease),
     box-shadow var(--ojf-duration-base) var(--ojf-ease),
@@ -25,10 +32,24 @@
   will-change: transform;
 }
 
+/* Magazine-index number — "01.", "02." etc. — JetBrains Mono, muted, tabular */
+.card::before {
+  content: counter(portfolio-item, decimal-leading-zero) ".";
+  position: absolute;
+  top: var(--ojf-spacing-md);
+  left: var(--ojf-spacing-sm);
+  font-family: var(--ojf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--ojf-font-weight-bold);
+  color: var(--ojf-text-muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
 .link:hover .card,
 .card:hover {
   transform: translateX(2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--ojf-shadow-sm);
   border-color: var(--ojf-border);
 }
 
@@ -37,37 +58,69 @@
   border-left-color: color-mix(in srgb, var(--ojf-accent) 30%, transparent);
 }
 
+/* Red-thread rank treatment: first card is the rank-0 feature.
+ * Cards 2–4 fade to 70%, the rest to 40% — the "thread" thinning.
+ * Selectors target the data-card-index already on the wrapper. */
+.wrapper[data-card-index="0"] .card {
+  /* full Lois-red, retained */
+}
+.wrapper[data-card-index="1"] .card,
+.wrapper[data-card-index="2"] .card,
+.wrapper[data-card-index="3"] .card {
+  border-left-color: color-mix(in srgb, var(--ojf-accent) 70%, transparent);
+}
+.wrapper:not([data-card-index="0"]):not([data-card-index="1"]):not([data-card-index="2"]):not([data-card-index="3"]) .card {
+  border-left-color: color-mix(in srgb, var(--ojf-accent) 40%, transparent);
+}
+
 .header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
+  gap: var(--ojf-spacing-sm);
   margin-bottom: var(--ojf-spacing-sm);
 }
 
+/* Sans + black weight — type as hero, even on a card */
 .name {
-  font-family: var(--ojf-font-mono);
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--ojf-font-sans);
+  font-size: 1.125rem;
+  font-weight: var(--ojf-font-weight-black);
   color: var(--ojf-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Rank-0 feature card: even bigger name (the GroupThink expanded-label moment) */
+.wrapper[data-card-index="0"] .name {
+  font-size: 1.75rem;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 1600px) {
+  .wrapper[data-card-index="0"] .name {
+    font-size: 2.125rem;
+  }
 }
 
 .badge {
   font-family: var(--ojf-font-mono);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--ojf-text-muted);
+  font-size: 0.625rem;
+  font-weight: var(--ojf-font-weight-bold);
+  color: var(--ojf-accent);
   background: color-mix(in srgb, var(--ojf-accent) 12%, transparent);
-  border-radius: 3px;
+  border-radius: var(--ojf-radius-sm);
   padding: 0.125rem 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
 }
 
 .previewBtn {
   background: none;
   border: 1px solid var(--ojf-border-subtle);
-  border-radius: 4px;
+  border-radius: var(--ojf-radius-sm);
   color: var(--ojf-text-muted);
   cursor: pointer;
   padding: 4px;
@@ -77,6 +130,7 @@
   transition: color var(--ojf-duration-fast) var(--ojf-ease),
               border-color var(--ojf-duration-fast) var(--ojf-ease);
   -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
 }
 
 .previewBtn:hover {
@@ -85,11 +139,20 @@
 }
 
 .tagline {
+  font-family: var(--ojf-font-sans);
   font-size: 0.875rem;
+  font-weight: var(--ojf-font-weight-normal);
   color: var(--ojf-text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: var(--ojf-spacing-md);
   flex: 1;
+}
+
+/* Rank-0 feature card gets a bigger tagline too */
+.wrapper[data-card-index="0"] .tagline {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 42rem;
 }
 
 .tags {
@@ -101,16 +164,21 @@
 .tag {
   font-family: var(--ojf-font-mono);
   font-size: 0.6875rem;
+  font-weight: var(--ojf-font-weight-medium);
   font-variant-numeric: tabular-nums;
-  color: var(--ojf-text-muted);
-  background: color-mix(in srgb, var(--ojf-accent) 12%, transparent);
+  color: var(--ojf-text-secondary);
+  background: color-mix(in srgb, var(--ojf-accent) 10%, transparent);
   padding: 0.125rem 0.5rem;
-  border-radius: 3px;
+  border-radius: var(--ojf-radius-sm);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
 }
 
-/* Scroll animation — entry from depth */
+/* Scroll animation — entry from depth.
+ * Opacity stays at 1 to avoid scroll-trigger race conditions where
+ * above-the-fold cards never reveal; depth zoom still plays. */
 .cardAnimated {
-  opacity: 0;
+  opacity: 1;
   transform: perspective(1000px) translateZ(-400px);
   transition:
     opacity 700ms var(--ojf-ease),
@@ -128,7 +196,16 @@
   }
 
   .card {
-    padding: var(--ojf-spacing-md);
+    padding: var(--ojf-spacing-md) var(--ojf-spacing-md) var(--ojf-spacing-md) var(--ojf-spacing-lg);
+  }
+
+  .card::before {
+    top: var(--ojf-spacing-sm);
+    left: var(--ojf-spacing-xs);
+  }
+
+  .wrapper[data-card-index="0"] .name {
+    font-size: 1.5rem;
   }
 
   .cardAnimated {

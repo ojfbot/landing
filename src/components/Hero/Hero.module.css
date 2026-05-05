@@ -1,6 +1,11 @@
+/* Hero — GroupThink transfer
+ * Lois: type IS the hero. Black weight, tight tracking, no decoration.
+ * Rams: every element earns its place — drop the text-shadow crutch.
+ */
+
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,93 +15,120 @@
 .content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: var(--ojf-spacing-xl);
-  max-width: 52rem;
+  text-align: left;
+  padding: var(--ojf-spacing-xl) var(--ojf-spacing-lg);
+  max-width: 64rem;
+  width: 100%;
 }
 
+/* Lois headline: black weight, tight tracking, no shadow.
+ * The size jump (~2x previous max) is the point — type as hero. */
 .headline {
   font-family: var(--ojf-font-sans);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 7.5vw, 5.5rem);
+  font-weight: var(--ojf-font-weight-black);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
   color: var(--ojf-text-primary);
-  margin-bottom: var(--ojf-spacing-lg);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  margin-bottom: var(--ojf-spacing-xl);
+  /* Soft scrim instead of blunt text-shadow — keeps depth without the cliché */
+  filter: drop-shadow(0 2px 24px rgba(0, 0, 0, 0.55));
 }
 
+/* Lois-red accent on the second clause — the "red thread" through the page */
+.headline em {
+  font-style: normal;
+  color: var(--ojf-accent);
+}
+
+/* Mono subline doubles as an editorial standfirst — short, tabular, tight */
 .subline {
   font-family: var(--ojf-font-mono);
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  font-size: clamp(0.875rem, 1.4vw, 1.0625rem);
+  font-weight: var(--ojf-font-weight-medium);
   color: var(--ojf-text-secondary);
-  line-height: 1.6;
+  line-height: 1.55;
   margin-bottom: var(--ojf-spacing-2xl);
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+  max-width: 42rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .ctas {
   display: flex;
   gap: var(--ojf-spacing-md);
-  justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
+/* CTA base — small radius (Rams: no pills), tight padding, mono label */
 .ctaPrimary,
 .ctaSecondary {
   font-family: var(--ojf-font-mono);
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.75rem 1.75rem;
-  border-radius: 4px;
-  transition: all var(--ojf-duration-base) var(--ojf-ease);
-  letter-spacing: 0.02em;
+  font-size: 0.8125rem;
+  font-weight: var(--ojf-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--ojf-radius-sm);
+  transition:
+    background var(--ojf-duration-base) var(--ojf-ease),
+    color var(--ojf-duration-base) var(--ojf-ease),
+    border-color var(--ojf-duration-base) var(--ojf-ease),
+    transform var(--ojf-duration-fast) var(--ojf-ease);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ojf-spacing-sm);
 }
 
 .ctaPrimary {
   background: var(--ojf-accent);
-  color: #fff;
+  color: #0a0a0a;
 }
 
+/* Lois playfulness — hover-nudge, the GroupThink microinteraction */
 .ctaPrimary:hover {
   background: var(--ojf-accent-hover);
-  color: #fff;
+  color: #0a0a0a;
+  transform: translateX(2px);
 }
 
 .ctaSecondary {
   border: 1px solid var(--ojf-border);
   color: var(--ojf-text-primary);
   background: rgba(10, 10, 10, 0.5);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .ctaSecondary:hover {
   border-color: var(--ojf-accent);
   color: var(--ojf-accent);
+  transform: translateX(2px);
 }
 
+/* Hint text on primary CTA — quieter, tabular */
 .ctaHint {
   display: block;
   font-size: 0.6875rem;
-  font-weight: 400;
-  opacity: 0.7;
+  font-weight: var(--ojf-font-weight-normal);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  opacity: 0.6;
   margin-top: 2px;
-  letter-spacing: 0.01em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .content {
     padding: var(--ojf-spacing-lg);
   }
-
   .ctas {
     flex-direction: column;
+    align-items: stretch;
   }
-
   .ctaPrimary,
   .ctaSecondary {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 }

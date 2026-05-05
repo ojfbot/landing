@@ -1,6 +1,11 @@
+/* Portfolio — GroupThink transfer
+ * Editorial table-of-contents: a magazine "WHAT'S RUNNING" page
+ * with a rank-0 feature, magazine-index numbering, red thread.
+ */
+
 .section {
   padding: var(--ojf-spacing-2xl) var(--ojf-spacing-xl);
-  max-width: 72rem;
+  max-width: 80rem;
   margin: 0 auto;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(4px);
@@ -9,32 +14,40 @@
   overflow: hidden;
 }
 
+/* Lois-style section headline — sans, black, big, no apologies */
 .heading {
-  font-family: var(--ojf-font-mono);
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-family: var(--ojf-font-sans);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: var(--ojf-font-weight-black);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ojf-text-secondary);
-  margin-bottom: var(--ojf-spacing-xs);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ojf-text-primary);
+  margin-bottom: var(--ojf-spacing-md);
 }
 
+/* Mono standfirst */
 .subheading {
   font-family: var(--ojf-font-mono);
   font-size: 0.8125rem;
-  color: var(--ojf-text-muted);
+  font-weight: var(--ojf-font-weight-medium);
+  color: var(--ojf-text-secondary);
   margin-bottom: var(--ojf-spacing-2xl);
-  line-height: 1.5;
+  line-height: 1.55;
+  max-width: 56rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .inlineLink {
   color: var(--ojf-accent);
   text-decoration: none;
   white-space: nowrap;
+  font-weight: var(--ojf-font-weight-bold);
 }
 
 .inlineLink:hover {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Three.js canvas sits behind cards */
@@ -52,7 +65,8 @@
   z-index: 1;
 }
 
-/* CSS Grid masonry — 4px row unit, dense packing */
+/* CSS Grid masonry — 4px row unit, dense packing.
+ * counter-reset enables magazine-index numbering on each card. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -60,17 +74,30 @@
   grid-auto-flow: dense;
   column-gap: 24px;
   row-gap: 0;
+  counter-reset: portfolio-item;
+}
+
+/* Rank-0 feature: first card spans 2 columns on desktop —
+ * the GroupThink "expanded" headline-card moment. */
+.grid > :first-child {
+  grid-column: span 2;
 }
 
 @media (min-width: 1600px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+  .grid > :first-child {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid > :first-child {
+    grid-column: span 2;
   }
 }
 
@@ -83,6 +110,10 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: var(--ojf-spacing-md);
+  }
+
+  .grid > :first-child {
+    grid-column: auto;
   }
 
   .sceneCanvas {
