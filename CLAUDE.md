@@ -34,6 +34,6 @@ vercel.json      # deploy config (.vercel/ is the linked project)
 ## Conventions
 
 - **Stack:** React 18 + `react-dom` + `three`; TypeScript; Vite build. No CSS framework — component-scoped styles.
-- **Lint = Biome.** Run `pnpm lint` before committing; CI uses the same.
+- **Lint = Biome.** Run `pnpm lint` before committing. No CI workflows exist in this repo.
 - **Three.js perf:** CorridorCanvas is the heaviest component — keep the procedural background GPU-cheap; profile before adding geometry.
 - **Deploy:** Vercel-linked (`.vercel/`); `pnpm build` output is what ships. Don't commit build artifacts (`dist/`, `tsconfig.tsbuildinfo`).
